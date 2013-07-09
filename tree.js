@@ -30,7 +30,11 @@ Tree.prototype.pop = function() {
 	};
 };
 
-Tree.prototype.getChildren = function(element) {
+/**
+ * This method can be chained, e.g.
+ * tree.childrenOf(el1).childrenOf(el2) etc.
+ */
+Tree.prototype.childrenOf = function(element) {
 	return this.children[element];
 };
 
@@ -55,12 +59,6 @@ Tree.prototype.reverse = function() {
 		this.children[this[i]].reverse();
 	}
 };
-
-Tree.prototype.push = function(node) {
-	if (typeof node !== 'object')
-		throw new Error('Only objects can be elements of this list');
-	Array.prototype.push.call(this, node);
-}
 
 /**
  * Dumps tree into a flat list, preserving all levels ordering.
