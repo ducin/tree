@@ -23,6 +23,7 @@ Tree.prototype.push = function() {
 Tree.prototype.pop = function() {
 	var element = Array.prototype.pop.call(this),
 		children = this.children[element];
+	delete this.children[element];
 	return {
 		element: element,
 		children: children
