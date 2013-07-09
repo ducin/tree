@@ -45,6 +45,17 @@ Tree.prototype.sort = function() {
 	}
 };
 
+Tree.prototype.reverse = function() {
+	// first, reverse myself
+	if (this.length > 1)
+		Array.prototype.reverse.call(this);
+	// then, recursively reverse all children subtrees by accessing
+	// this.children map where the key is the index of element in this array
+	for (var i = 0; i < this.length; i++) {
+		this.children[this[i]].reverse();
+	}
+};
+
 Tree.prototype.push = function(node) {
 	if (typeof node !== 'object')
 		throw new Error('Only objects can be elements of this list');
