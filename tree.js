@@ -17,9 +17,6 @@ Tree.prototype.push = function() {
 	return this.length;
 };
 
-/**
- * Arguments are not important.
- */
 Tree.prototype.pop = function() {
 	var element = Array.prototype.pop.call(this),
 		children = this.children[element];
@@ -30,6 +27,25 @@ Tree.prototype.pop = function() {
 	};
 };
 
+Tree.prototype.shift = function() {
+	var element = Array.prototype.shift.call(this),
+		children = this.children[element];
+	delete this.children[element];
+	return {
+		element: element,
+		children: children
+	};
+};
+
+Tree.prototype.unshift = function() {
+	Array.prototype.unshift.apply(this, arguments);
+	var args = Array.prototype.slice.call(arguments);
+	for (var i = 0; i < args.length; i++) {
+		this.children[args[i]] = new Tree();
+	}
+	return this.length;
+};
+
 /**
  * This method can be chained, e.g.
  * tree.childrenOf(el1).childrenOf(el2) etc.
@@ -38,14 +54,14 @@ Tree.prototype.childrenOf = function(element) {
 	return this.children[element];
 };
 
-Tree.prototype.sort = function() {
+Tree.prototype.sort = function(compareFunction) {
 	// first, sort myself
 	if (this.length > 1)
-		Array.prototype.sort.call(this);
+		Array.prototype.sort.call(this, compareFunction);
 	// then, recursively sort all children subtrees by accessing
 	// this.children map where the key is the index of element in this array
 	for (var i = 0; i < this.length; i++) {
-		this.children[this[i]].sort();
+		this.children[this[i]].sort(compareFunction);
 	}
 };
 
@@ -61,9 +77,21 @@ Tree.prototype.reverse = function() {
 };
 
 /**
+ * Returns flattened list join.
+ * @param separator String
+ * @return String
+ */
+/*
+Tree.prototype.join = function(separator) {
+	return Array.prototype.join.call(Tree.prototype.flatten.call(this), separator);
+};
+*/
+
+/**
  * Dumps tree into a flat list, preserving all levels ordering.
  * This function is recursive and takes one argument. From the outside it
  * should be called without any parameters
+ * @return Array
  */
 Tree.prototype.flatten = function() {
 	var resultList = [], self = this;
