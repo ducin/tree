@@ -1,7 +1,7 @@
 var require = {
 	shim: {
-		"underscore": {
-			exports: "_"
+		'underscore': {
+			exports: '_'
 		},
 		'tree' : {
 			exports: 'Tree'

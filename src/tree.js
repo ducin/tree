@@ -57,12 +57,13 @@ Tree.prototype.childrenOf = function(element) {
 
 Tree.prototype.nodes = function() {
 	return Array.prototype.slice.call(this);
-}
+};
 
 Tree.prototype.sort = function(compareFunction) {
 	// first, sort myself
-	if (this.length > 1)
+	if (this.length > 1) {
 		Array.prototype.sort.call(this, compareFunction);
+	}
 	// then, recursively sort all children subtrees by accessing
 	// this.children map where the key is the index of element in this array
 	for (var i = 0; i < this.length; i++) {
@@ -72,8 +73,9 @@ Tree.prototype.sort = function(compareFunction) {
 
 Tree.prototype.reverse = function() {
 	// first, reverse myself
-	if (this.length > 1)
+	if (this.length > 1) {
 		Array.prototype.reverse.call(this);
+	}
 	// then, recursively reverse all children subtrees by accessing
 	// this.children map where the key is the index of element in this array
 	for (var i = 0; i < this.length; i++) {
@@ -98,12 +100,12 @@ Tree.prototype.join = function(separator) {
  * should be called without any parameters
  * @return Array
  */
-	Tree.prototype.flatten = function() {
-		var nodeIds = [], nodeId;
-		for (var i = 0; i < this.length; i++) {
-			nodeId = this[i];
-			nodeIds.push(nodeId);
-			Array.prototype.push.apply(nodeIds, this.childrenOf(nodeId).flatten());
-		}
-		return nodeIds;
-	};
+Tree.prototype.flatten = function() {
+	var nodeIds = [], nodeId;
+	for (var i = 0; i < this.length; i++) {
+		nodeId = this[i];
+		nodeIds.push(nodeId);
+		Array.prototype.push.apply(nodeIds, this.childrenOf(nodeId).flatten());
+	}
+	return nodeIds;
+};
