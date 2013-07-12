@@ -7,6 +7,7 @@ function Tree() {
 }
 
 Tree.prototype = [];
+Tree.prototype.constructor = Tree;
 
 Tree.prototype.push = function() {
 	Array.prototype.push.apply(this, arguments);
@@ -54,6 +55,10 @@ Tree.prototype.childrenOf = function(element) {
 	return this.children[element];
 };
 
+Tree.prototype.nodes = function() {
+	return Array.prototype.slice.call(this);
+}
+
 Tree.prototype.sort = function(compareFunction) {
 	// first, sort myself
 	if (this.length > 1)
@@ -93,15 +98,12 @@ Tree.prototype.join = function(separator) {
  * should be called without any parameters
  * @return Array
  */
-Tree.prototype.flatten = function() {
-	var resultList = [], self = this;
-	return (function flattenRecursive(returnList) {
-		console.log(self);
-		for (var i = 0; i < self.length; i++) {
-			resultList.push(self[i]);
-			flattenRecursive(childList);
+	Tree.prototype.flatten = function() {
+		var nodeIds = [], nodeId;
+		for (var i = 0; i < this.length; i++) {
+			nodeId = this[i];
+			nodeIds.push(nodeId);
+			Array.prototype.push.apply(nodeIds, this.childrenOf(nodeId).flatten());
 		}
-		return resultList;
-	}());
-}
-
+		return nodeIds;
+	};
