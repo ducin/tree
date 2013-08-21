@@ -1,10 +1,10 @@
 {
-  "name": "js-tree-structure",
-  "author": "Tomasz Ducin (symfony-world.blogspot.com)",
-  "homepage": "https://github.com/tkoomzaaskz/jsTreeStructure",
+  "name": "tree",
+  "author": ""Tomasz Ducin <tomasz.ducin@gmail.com>"",
+  "homepage": "https://github.com/tkoomzaaskz/tree",
   "filename": "tree.js",
   "version": "0.0.1",
-  "description": "provides basic tree structure for JavaScript",
+  "description": "Provides basic tree structure for JavaScript",
   "license": "MIT",
   "readmeFilename": "README.md",
   "directories": {
@@ -13,7 +13,7 @@
   "dependencies": {
     "underscore": "~1.4.x"
   },
-	"devDependencies": {
+  "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-qunit": "~0.2.0",
@@ -21,9 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tkoomzaaskz/jsTreeStructure.git"
+    "url": "https://github.com/tkoomzaaskz/tree.git"
   },
   "keywords": [
-    "tree"
+    "tree",
+    "structure"
   ]
 }

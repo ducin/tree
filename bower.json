@@ -1,0 +1,22 @@
+{
+  "name": "tree",
+  "version": "0.1.0",
+  "homepage": "https://github.com/tkoomzaaskz/tree",
+  "authors": [
+    "Tomasz Ducin <tomasz.ducin@gmail.com>"
+  ],
+  "description": "Provides basic tree structure for JavaScript",
+  "main": "src/tree.js",
+  "keywords": [
+    "tree",
+    "structure"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
