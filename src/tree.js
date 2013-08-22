@@ -20,11 +20,15 @@
 
 	Tree.prototype.constructor = Tree;
 
+	Tree.prototype.getNodeId = function(el) {
+		return el;
+	};
+
 	Tree.prototype.push = function() {
 		push.apply(this, arguments);
 		var args = slice.call(arguments);
 		for (var i = 0; i < args.length; i++) {
-			this.children[args[i]] = new Tree();
+			this.children[this.getNodeId(args[i])] = new Tree();
 		}
 		return this.length;
 	};
@@ -53,7 +57,7 @@
 		ArrayProto.unshift.apply(this, arguments);
 		var args = slice.call(arguments);
 		for (var i = 0; i < args.length; i++) {
-			this.children[args[i]] = new Tree();
+			this.children[this.getNodeId(args[i])] = new Tree();
 		}
 		return this.length;
 	};
@@ -121,12 +125,22 @@
 		return nodeIds;
 	};
 
+	var ObjectTree = Tree;
+
+	ObjectTree.prototype = new Tree();
+
+	ObjectTree.prototype.getNodeId = function(el) {
+		return el.id;
+	};
+
 	if (typeof exports !== 'undefined') {
 		if (typeof module !== 'undefined' && module.exports) {
 			exports = module.exports = Tree;
 		}
 		exports.Tree = Tree;
+		exports.ObjectTree = ObjectTree;
 	} else {
 		root.Tree = Tree;
+		root.ObjectTree = ObjectTree;
 	}
 }());

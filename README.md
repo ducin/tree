@@ -52,6 +52,37 @@ Node.js support
          '3': { children: {} } },
       length: 3 }
 
+ObjectTree
+----------
+
+    > var T = require('./src/tree');
+    undefined
+
+    > T
+    { [Function] Tree: [Circular], ObjectTree: [Circular] }
+
+    > var ot = new T.ObjectTree();
+    undefined
+
+    > ot.push({id:4, val:5})
+    1
+
+    > ot
+    { '0': { id: 4, val: 5 },
+      children: { '4': { children: {} } },
+      length: 1 }
+
+    > ot.unshift({id:2, val:98.6})
+    2
+
+    > ot
+    { '0': { id: 2, val: 98.6 },
+      '1': { id: 4, val: 5 },
+      children:
+       { '2': { children: {} },
+         '4': { children: {} } },
+      length: 2 }
+
 Tests
 -----
 
