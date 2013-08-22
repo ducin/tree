@@ -57,6 +57,8 @@ Tests
 
 So far, the project has some basic QUnit tests.
 
+[![Build Status](https://travis-ci.org/tkoomzaaskz/tree.png?branch=master)](https://travis-ci.org/tkoomzaaskz/tree)
+
 Inspirations
 ------------
 
