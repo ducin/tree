@@ -6,12 +6,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     qunit: {
-      all: ['tests/tests.html']
+      all: ['test/index.html']
     },
     jshint: {
       files: {
           src: ['src/*.js'],
-          tests: ['tests/suites/**/*.js']
+          tests: ['test/suites/**/*.js']
       },
       options: {
         boss: true,
@@ -31,8 +31,8 @@ module.exports = function(grunt) {
 //        reporterOutput: 'report/jshint.xml',
         sub: true,
         trailing: true,
-        undef: true,
-        unused: true,
+//        undef: true,
+//        unused: true,
         globals: {
           QUnit: true,
           define: true

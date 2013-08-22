@@ -4,7 +4,7 @@
 	var root = this;
 
 	// temporary variables to speed up loading the library
-	var ArrayProto = Array.prototype
+	var ArrayProto = Array.prototype;
 	var push = ArrayProto.push;
 	var slice = ArrayProto.slice;
 
@@ -14,7 +14,7 @@
 	 */
 	var Tree = function() {
 		this.children = {};
-	}
+	};
 
 	Tree.prototype = [];
 
