@@ -3,15 +3,13 @@
 		baseUrl: "../src"
 	});
 
-	var tests = [
-		"../test/suites/basic"
-	],
-	others = [
+	require(["../test/suites/basic",
 		'../test/qunit-extend',
 		'qunit'
-	];
-
-	require(tests.concat(others), function(){
+	], function(BasicTests) {
+		QUnit.config.autoload = false;
+		QUnit.config.autostart = false;
+		BasicTests.run();
 		QUnit.load();
 		QUnit.start();
 	});
