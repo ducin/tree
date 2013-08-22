@@ -3,7 +3,7 @@
   "author": ""Tomasz Ducin <tomasz.ducin@gmail.com>"",
   "homepage": "https://github.com/tkoomzaaskz/tree",
   "filename": "tree.js",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Provides basic tree structure for JavaScript",
   "license": "MIT",
   "readmeFilename": "README.md",
