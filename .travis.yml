@@ -4,3 +4,11 @@ node_js:
   - "0.10"
 before_script:
   - npm install -g grunt-cli
+script:
+  - grunt
+notifications:
+  recipients:
+    - tkoomzaaskz@o2.pl
+  email:
+    on_success: change
+    on_failure: always
