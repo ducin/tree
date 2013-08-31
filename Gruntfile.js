@@ -6,7 +6,13 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     qunit: {
-      all: ['test/index.html']
+      all: ['test/index.html'],
+      options: {
+        timeout: 3000,
+        coverage: {
+          src: ['src/tree.js']
+        }
+      }
     },
     jshint: {
       files: {
@@ -26,7 +32,7 @@ module.exports = function(grunt) {
         maxcomplexity: 10,
         newcap: true,
         noarg: true,
-        quotmark: "single",
+        quotmark: 'single',
 //        reporter: 'checkstyle',
 //        reporterOutput: 'report/jshint.xml',
         sub: true,
@@ -42,7 +48,9 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  grunt.loadNpmTasks('grunt-contrib-qunit');
+
   // Default task.
-  grunt.registerTask('default', ['jshint','qunit']);
+  grunt.registerTask('default', ['jshint', 'qunit']);
 
 };

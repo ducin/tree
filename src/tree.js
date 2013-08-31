@@ -129,4 +129,4 @@
 	} else {
 		root.Tree = Tree;
 	}
-}());
+}(this));
