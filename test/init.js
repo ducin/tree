@@ -18,8 +18,7 @@ require.config({
 });
 
 require(['../test/suites/basic',
-	'../test/qunit-extend',
-	'init-config'
+	'../test/qunit-extend'
 ], function(BasicTests) {
 	QUnit.config.autoload = false;
 	QUnit.config.autostart = false;
