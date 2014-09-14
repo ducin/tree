@@ -21,6 +21,7 @@
   ],
   "devDependencies": {
     "underscore": "~1.7.0",
-    "qunit": "~1.15.0"
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15"
   }
 }
