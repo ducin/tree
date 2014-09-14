@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/tkoomzaaskz/tree.png?branch=master)](https://travis-ci.org/tkoomzaaskz/tree)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
+[![Dependency Status](https://david-dm.org/tkoomzaaskz/tree.svg)](https://david-dm.org/tkoomzaaskz/tree)
+[![devDependency Status](https://david-dm.org/tkoomzaaskz/tree/dev-status.svg)](https://david-dm.org/tkoomzaaskz/tree#info=devDependencies)
+
      ____  ____  ____  ____     ____  ___
     (_  _)(  _ \( ___)( ___)   (_  _)/ __)
       )(   )   / )__)  )__)   .-_)(  \__ \
@@ -10,6 +16,12 @@ _Tree_ implements basic tree structure in JavaScript. It overrides native JS
 arrays, so that it has similar API. The benefit of using _Tree_ is that its
 objects (which inherit from Array.prototype) can be nested internally, forming
 a recursive, hierarchical structure.
+
+Features
+--------
+
+ * standard and minified version
+ * basic QUnit tests integrated with travis-ci
 
 Node.js support
 ---------------
@@ -51,13 +63,6 @@ Node.js support
             length: 2 },
          '3': { children: {} } },
       length: 3 }
-
-Tests
------
-
-So far, the project has some basic QUnit tests.
-
-[![Build Status](https://travis-ci.org/tkoomzaaskz/tree.png?branch=master)](https://travis-ci.org/tkoomzaaskz/tree)
 
 Inspirations
 ------------

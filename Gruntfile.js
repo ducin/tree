@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     },
     jshint: {
       files: {
-          src: ['src/*.js'],
+          src: ['src/*.js', '!src/*.min.js'],
           tests: ['test/suites/**/*.js']
       },
       options: {
@@ -43,14 +43,22 @@ module.exports = function(grunt) {
         }
       }
     },
-    uglify: {}
+    uglify: {
+      build: {
+        files: {
+          'src/tree.min.js': 'src/tree.js'
+        }
+      }
+    }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task.
   grunt.registerTask('test', ['qunit', 'jshint']);
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('build', ['uglify']);
+  grunt.registerTask('default', ['test', 'build']);
 };
