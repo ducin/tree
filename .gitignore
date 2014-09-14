@@ -1,3 +1,9 @@
-nbproject/
+# node platform files
 node_modules/
+bower_components/
+
+# test & build files
 report/
+
+# IDE files
+nbproject/

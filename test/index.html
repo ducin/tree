@@ -3,13 +3,15 @@
 	<head>
 		<title>jsTreeStructure Test Runner</title>
 		<meta charset="utf-8">
-		<!-- QUnit includes -->
-		<link rel="stylesheet" href="vendor/css/qunit.css" />
-		<script src="../src/vendor/js/qunit.js"></script>
+		<link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css" />
 	</head>
 	<body>
 		<div id="qunit"></div>
 		<div id="qunit-fixture"></div>
-		<script src="../src/vendor/js/require.js" data-main="init.js"></script>
+		<script src="../src/tree.js"></script>
+		<script src="../bower_components/underscore/underscore.js"></script>
+		<script src="../bower_components/qunit/qunit/qunit.js"></script>
+		<script src="qunit-extend.js"></script>
+		<script src="suites/basic.js"></script>
 	</body>
 </html>

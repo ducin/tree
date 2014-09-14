@@ -18,5 +18,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "underscore": "~1.7.0",
+    "qunit": "~1.15.0"
+  }
 }

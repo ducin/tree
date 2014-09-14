@@ -1,8 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
   // Project configuration.
   grunt.initConfig({
     qunit: {
@@ -48,9 +46,11 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit']);
-
+  grunt.registerTask('test', ['qunit', 'jshint']);
+  grunt.registerTask('default', ['test']);
 };
