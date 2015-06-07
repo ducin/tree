@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/tkoomzaaskz/tree.png?branch=master)](https://travis-ci.org/tkoomzaaskz/tree)
+[![Build Status](https://travis-ci.org/ducin/tree.png?branch=master)](https://travis-ci.org/ducin/tree)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[![Dependency Status](https://david-dm.org/tkoomzaaskz/tree.svg)](https://david-dm.org/tkoomzaaskz/tree)
-[![devDependency Status](https://david-dm.org/tkoomzaaskz/tree/dev-status.svg)](https://david-dm.org/tkoomzaaskz/tree#info=devDependencies)
+[![Dependency Status](https://david-dm.org/ducin/tree.svg)](https://david-dm.org/ducin/tree)
+[![devDependency Status](https://david-dm.org/ducin/tree/dev-status.svg)](https://david-dm.org/ducin/tree#info=devDependencies)
 
      ____  ____  ____  ____     ____  ___
     (_  _)(  _ \( ___)( ___)   (_  _)/ __)
